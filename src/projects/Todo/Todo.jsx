@@ -17,27 +17,24 @@ export const Todo = () => {
     };
   }, []);
 
-  const [inputValue, setInputValue] = React.useState("");
+  const [inputValue, setInputValue] = React.useState({});
   const handleInputChange = (value) => {
-    setInputValue(value);
+    setInputValue({ id: value, content: value, checked: false });
   };
   const [tasks, setTasks] = React.useState([]);
 
-  const handleFormSubmit = (event) => {
-    event.preventDefault();
+  const handleFormSubmit = () => {
+    const { id, content, checked } = inputValue;
+    const hasentru = tasks.find((task) => task.content === content);
 
-    if (inputValue.trim() === "") {
-      alert("Please enter a valid task");
-      return;
-    }
-    if (tasks.includes(inputValue)) {
-      alert(inputValue + " already exists");
-      setInputValue("");
+    if (hasentru) {
+      alert(inputValue.content + " already exists");
+      setInputValue({ id: "", content: "", checked: "" });
       return;
     }
 
-    setTasks((prevTask) => [...prevTask, inputValue]);
-    setInputValue(""); // Clear the input field after adding the task
+    setTasks((prevTask) => [...prevTask, { id, content, checked }]);
+    setInputValue({ id: "", content: "", checked: "" });
   };
   const handleDeleteAll = () => {
     if (tasks.length === 0) {
@@ -46,14 +43,24 @@ export const Todo = () => {
     }
     setTasks([]);
   };
-  const handleSingleDelete = (index) => {
-    console.log("Deleting task at index:", index);
-    if (tasks.length > 0) {
-      tasks.splice(index, 1);
-      setTasks([...tasks]); // Update the state to trigger re-render
+  const handleSingleDelete = (id) => {
+    console.log("Deleting task at index:", id);
+    let indx = tasks.findIndex((task) => task.id === id);
+    if (indx > -1) {
+      tasks.splice(indx, 1);
+      setTasks([...tasks]);
+      return;
     }
   };
-  const handleStrikeOut = () => {};
+  const handleStrikeOut = (task) => {
+    const b = tasks.map((t) => {
+      if (t.id === task.id) {
+        return { ...t, checked: !t.checked };
+      }
+      return t;
+    });
+    setTasks(b);
+  };
   return (
     <>
       <section className="todo-container">
@@ -75,7 +82,7 @@ export const Todo = () => {
           <form onSubmit={handleFormSubmit}>
             <input
               onChange={(event) => handleInputChange(event.target.value)}
-              value={inputValue}
+              value={inputValue.content}
               type="text"
               placeholder="Add a new task"
               autoComplete="off"
@@ -105,26 +112,19 @@ export const Todo = () => {
           }}
         >
           {tasks.length > 0
-            ? tasks.map((task, index) => (
-                <li
-                  key={index}
-                  style={{
-                    backgroundColor: "grey",
-                    display: "flex",
-                    padding: 8,
-                    margin: 6,
-                    alignItems: "left",
-                    gap: 10,
-                  }}
-                >
-                  <span style={{ textAlign: "right" }}>{task}</span>
-                  <button
-                    onClick={handleStrikeOut}
-                    style={{ backgroundColor: "green" }}
+            ? tasks.map((task) => (
+                <li key={task.id}>
+                  <span
+                    className={task.checked ? "strikeoutclass" : "notstrikeout"}
                   >
-                    <MdCheck></MdCheck>
+                    {task.content}
+                  </span>
+                  <button style={{ backgroundColor: "green" }}>
+                    <MdCheck
+                      onClickCapture={() => handleStrikeOut(task)}
+                    ></MdCheck>
                   </button>
-                  <button onClickCapture={() => handleSingleDelete(index)}>
+                  <button onClickCapture={() => handleSingleDelete(task.id)}>
                     <MdDeleteForever></MdDeleteForever>
                   </button>
                 </li>

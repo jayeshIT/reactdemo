@@ -13,6 +13,13 @@
   }
 }
 
+.strikeoutclass {
+  background-color: red;
+}
+.notstrikeout {
+  background-color: orange;
+}
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
