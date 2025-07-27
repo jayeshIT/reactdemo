@@ -1,7 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
 import React from 'react';
-import useState from 'react';
 import { Counterchild } from './component/counterchild';
 import { Liftupcomponent } from './component/Liftupcomponent';
 import Toggleswitch from './projects/ToggleSwitch/ToggleSwitch';
