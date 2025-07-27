@@ -2,6 +2,7 @@ import useState, { useEffect } from "react";
 import React from "react";
 import { MdCheck } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
+import { jsx } from "react/jsx-runtime";
 export const Todo = () => {
   const [dateTime, setDateTime] = React.useState();
   useEffect(() => {
@@ -21,7 +22,15 @@ export const Todo = () => {
   const handleInputChange = (value) => {
     setInputValue({ id: value, content: value, checked: false });
   };
-  const [tasks, setTasks] = React.useState([]);
+  const exportLocalStorageData = () => {
+    const data = localStorage.getItem("todoData");
+    debugger;
+    if (data == null || data == undefined || data.length == 0) {
+      return [];
+    }
+    return JSON.parse(data);
+  };
+  const [tasks, setTasks] = React.useState(exportLocalStorageData);
 
   const handleFormSubmit = () => {
     const { id, content, checked } = inputValue;
@@ -33,7 +42,11 @@ export const Todo = () => {
       return;
     }
 
-    setTasks((prevTask) => [...prevTask, { id, content, checked }]);
+    setTasks((prevTask) => [{ id, content, checked },...prevTask]);
+    localStorage.setItem(
+      "todoData",
+      JSON.stringify([...tasks, { id, content, checked }])
+    );
     setInputValue({ id: "", content: "", checked: "" });
   };
   const handleDeleteAll = () => {
@@ -42,6 +55,7 @@ export const Todo = () => {
       return;
     }
     setTasks([]);
+    localStorage.setItem('todoData', [])
   };
   const handleSingleDelete = (id) => {
     console.log("Deleting task at index:", id);
@@ -49,6 +63,10 @@ export const Todo = () => {
     if (indx > -1) {
       tasks.splice(indx, 1);
       setTasks([...tasks]);
+      localStorage.setItem(
+      "todoData",
+      JSON.stringify([...tasks])
+    );
       return;
     }
   };
