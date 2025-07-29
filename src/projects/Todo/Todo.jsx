@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import React from "react";
 import { MdCheck } from "react-icons/md";
 import { MdDeleteForever } from "react-icons/md";
+import "./Todo.css";
 export const Todo = () => {
   const [dateTime, setDateTime] = React.useState();
   useEffect(() => {
@@ -32,6 +33,10 @@ export const Todo = () => {
   const [tasks, setTasks] = React.useState(exportLocalStorageData);
 
   const handleFormSubmit = () => {
+    if (inputValue.content === "" || inputValue.content === undefined) {
+      alert("Please enter a task");
+      return;
+    }
     const { id, content, checked } = inputValue;
     const hasentru = tasks.find((task) => task.content === content);
 
@@ -79,7 +84,7 @@ export const Todo = () => {
     <>
       <section className="todo-container">
         <header>
-          <h1>Todo List</h1>
+          <h1 className="header">Todo List</h1>
           <h2>{dateTime}</h2>
         </header>
       </section>

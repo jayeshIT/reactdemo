@@ -1,0 +1,109 @@
+.todo-container {
+  max-width: 500px;
+  margin: 40px auto 0 auto;
+  padding: 24px;
+  background: #f9f9f9;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.07);
+  text-align: center;
+}
+
+.todo-container header h1 {
+  margin: 0;
+  font-size: 2rem;
+  color: #333;
+}
+
+.todo-container header h2 {
+  margin: 8px 0 0 0;
+  font-size: 1rem;
+  color: #666;
+}
+
+.todo-list {
+  max-width: 500px;
+  margin: 20px auto 80px auto;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.04);
+  padding: 16px;
+}
+
+.todo-list ul {
+  padding: 0;
+  margin: 0;
+}
+
+.todo-list li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 12px;
+  padding: 8px 0;
+  border-bottom: 1px solid #eee;
+}
+
+.strikeoutclass {
+  text-decoration: line-through;
+  color: #aaa;
+  flex: 1;
+}
+
+.notstrikeout {
+  color: #222;
+  flex: 1;
+}
+
+input[type="text"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 220px;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+button {
+  padding: 6px 12px;
+  border: none;
+  border-radius: 6px;
+  color: #fff;
+  cursor: pointer;
+  margin-left: 6px;
+  font-size: 1rem;
+}
+
+button[type="submit"], .todo-list button {
+  background-color: #007bff;
+}
+
+button[style*="background-color: green"] {
+  background-color: #28a745 !important;
+}
+
+button[style*="background-color: blue"] {
+  background-color: #007bff !important;
+}
+
+button[style*="margin: 10"] {
+  background-color: #dc3545 !important;
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 100;
+  min-width: 120px;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .todo-container, .todo-list {
+    max-width: 95vw;
+    padding: 12px;
+  }
+  button[style*="margin: 10"] {
+    min-width: 90vw;
+    left: 5vw;
+    transform: none;
+  }
+}
