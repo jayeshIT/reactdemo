@@ -18,7 +18,7 @@ export const Fetchapi = () => {
   //----------------------------------------------------*/
   //======================This is correct approact========\
 
-  const getDatapromiseWay = () => {
+  /*const getDatapromiseWay = () => {
     fetch(apiurl)
       .then((res) => res.json())
       .then((data) => {
@@ -28,7 +28,7 @@ export const Fetchapi = () => {
       .catch((error) => {
         console.log("Errror" + error.message);
       });
-  };
+  };*/
 
   const getDataAsyncWay = async () => {
     try {
@@ -42,8 +42,7 @@ export const Fetchapi = () => {
 
   useEffect(() => {
     getDataAsyncWay();
-    return () => {};
-  }, []);
+  });
 
   if (apidata) {
     return (
