@@ -24,7 +24,6 @@ export const Todo = () => {
   };
   const exportLocalStorageData = () => {
     const data = localStorage.getItem("todoData");
-    debugger;
     if (data === null || data === undefined || data.length === 0) {
       return [];
     }
@@ -95,10 +94,12 @@ export const Todo = () => {
           justifyContent: "space-between",
           alignItems: "center",
           gap: 10,
+          marginTop: 10
         }}
       >
         <div>
           <form onSubmit={handleFormSubmit}>
+
             <input
               onChange={(event) => handleInputChange(event.target.value)}
               value={inputValue.content}
@@ -108,13 +109,15 @@ export const Todo = () => {
             />
           </form>
         </div>
-        <div>
+        <div >
           <button
             onClick={handleFormSubmit}
             type="submit"
-            style={{ backgroundColor: "blue" }}
           >
             Add Task
+          </button>
+          <button onClick={handleDeleteAll}>
+            Clear All
           </button>
         </div>
       </section>
@@ -132,28 +135,26 @@ export const Todo = () => {
         >
           {tasks.length > 0
             ? tasks.map((task) => (
-                <li key={task.id}>
-                  <span
-                    className={task.checked ? "strikeoutclass" : "notstrikeout"}
-                  >
-                    {task.content}
-                  </span>
-                  <button style={{ backgroundColor: "green" }}>
-                    <MdCheck
-                      onClickCapture={() => handleStrikeOut(task)}
-                    ></MdCheck>
-                  </button>
-                  <button onClickCapture={() => handleSingleDelete(task.id)}>
-                    <MdDeleteForever></MdDeleteForever>
-                  </button>
-                </li>
-              ))
+              <li key={task.id}>
+                <span
+                  className={task.checked ? "strikeoutclass" : "notstrikeout"}
+                >
+                  {task.content}
+                </span>
+                <button style={{ backgroundColor: "green" }}>
+                  <MdCheck
+                    onClickCapture={() => handleStrikeOut(task)}
+                  ></MdCheck>
+                </button>
+                <button onClickCapture={() => handleSingleDelete(task.id)}>
+                  <MdDeleteForever></MdDeleteForever>
+                </button>
+              </li>
+            ))
             : null}
         </ul>
       </section>
-      <button onClick={handleDeleteAll} style={{ margin: 10 }}>
-        Clear All
-      </button>
+
     </>
   );
 };

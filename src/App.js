@@ -4,6 +4,7 @@ import { Todo } from "./projects/Todo/Todo";
 import { Home } from "./component/home";
 import Profile from "./component/profile";
 import { Fetchapi } from "./component/fetchapi";
+import Refexample from './component/Refexample';
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
           <Link to="/todo">Todo</Link> | &nbsp;
           <Link to="/switch">switch</Link> | &nbsp;
           <Link to="/profile">Profile</Link> | &nbsp;
-          <Link to="/apilogic">API Fetch</Link>
+          <Link to="/apilogic">API Fetch</Link>| &nbsp;
+          <Link to="/useref">Use Ref</Link>
         </nav>
         <Routes>
           <Route path="/" element={<Home />} />
@@ -22,6 +24,7 @@ function App() {
           <Route path="/switch" element={<Toggleswitch />} />
           <Route path="/profile" element={<Profile />} />
           <Route path="/apilogic" element={<Fetchapi />} />
+          <Route path="/useref" element={<Refexample />} />
         </Routes>
       </BrowserRouter>
     </div>
