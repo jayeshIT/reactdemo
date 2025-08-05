@@ -1,5 +1,5 @@
 import { useRef } from "react";
-
+import { Forwardref } from './forwardref';
 export default function Refexample() {
 
     const username = useRef(null);
@@ -35,6 +35,8 @@ export default function Refexample() {
                 </div>
 
             </form>
+            <br />
+            <Forwardref></Forwardref>
         </div>
     </>);
 }
