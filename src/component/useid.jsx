@@ -1,13 +1,15 @@
-import { useId } from "react";
-
+import { useId, useContext } from "react";
+import { BioContext } from "./ContextAPI/index";
 export const Useidexample = () => {
     const handleSignIn = (e) => {
         e.preventDefault();
     };
     var id = useId();
+    const { name, age } = useContext(BioContext);
     return (<>
         <h2>Login</h2>
         <form >
+            {name} is {age} years old.
             <div>
                 <label htmlFor={id + "usernameId"}>username</label>
                 <input type="text" id={id + "usernameId"} name="username" />
