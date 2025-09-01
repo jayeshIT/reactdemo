@@ -8,6 +8,7 @@ export const Forwardref = () => {
         alert(username.current.value);
     }
     return (<>
+        <h2>This is forwards refernce example</h2>
         <form onSubmit={handleOnSubmit}>
             <Beforerect19 ref={username} label="username"></Beforerect19>
             <Beforerect19 ref={password} label="password"></Beforerect19>

@@ -81,25 +81,16 @@ export const Todo = () => {
   };
   return (
     <>
-      <section className="todo-container">
+
+      <section className="section-4">
+
         <header>
           <h1 className="header">Todo List</h1>
           <h2>{dateTime}</h2>
         </header>
-      </section>
-      <section
-        style={{
-          border: "1 solid grey",
-          display: "flex",
-          justifyContent: "space-between",
-          alignItems: "center",
-          gap: 10,
-          marginTop: 10
-        }}
-      >
+
         <div>
           <form onSubmit={handleFormSubmit}>
-
             <input
               onChange={(event) => handleInputChange(event.target.value)}
               value={inputValue.content}
@@ -120,9 +111,6 @@ export const Todo = () => {
             Clear All
           </button>
         </div>
-      </section>
-
-      <section className="todo-list">
         <ul
           style={{
             display: "flex",
@@ -154,7 +142,6 @@ export const Todo = () => {
             : null}
         </ul>
       </section>
-
     </>
   );
 };

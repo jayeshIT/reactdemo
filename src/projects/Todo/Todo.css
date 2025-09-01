@@ -21,12 +21,12 @@
 }
 
 .todo-list {
+  border : 1px solid grey;
   max-width: 500px;
-  margin: 20px auto 80px auto;
+  /* margin: 20px auto 80px auto; */
   background: #fff;
   border-radius: 8px;
   box-shadow: 0 1px 4px rgba(0, 0, 0, 0.04);
-  padding: 16px;
 }
 
 .todo-list ul {
@@ -55,6 +55,24 @@
 }
 
 input[type="text"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 220px;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+input[type="email"] {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+  width: 220px;
+  font-size: 1rem;
+  margin-right: 8px;
+}
+
+input[type="password"] {
   padding: 8px;
   border-radius: 6px;
   border: 1px solid #ccc;

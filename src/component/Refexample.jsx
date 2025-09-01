@@ -14,7 +14,7 @@ export default function Refexample() {
 
         <div >
             <h2>Login</h2>
-             {name} is {age} years old.
+            {name} is {age} years old.
             <form style={{ display: 'flex', flexDirection: 'column' }}>
                 <label htmlFor="email">Email</label>
                 <input
