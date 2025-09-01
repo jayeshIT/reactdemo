@@ -2,18 +2,22 @@ import { useReducer } from "react";
 export const Usereducercomp = () => {
 
     var initialState = {
-        count: 0
+        count: Number(0),
+        inc: 2,
+        dec: 2
     }
     const reducer = (state, action) => {
 
         switch (action.type) {
             case "inc":
-                return { count: state.count + 1 }
+                return { ...state, count: Number(state.count + state.inc) }
 
             case "dec":
-                return { count: state.count - 1 }
+                return { ...state, count: Number(state.count - state.dec) }
             case "reset":
-                return { count: 0 }
+                return { count: Number(0) }
+            case "default":
+                return state;
         }
     }
     const [state, dispatch] = useReducer(reducer, initialState);
