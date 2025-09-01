@@ -8,6 +8,7 @@ import Refexample from './component/Refexample';
 import { Useidexample } from "./component/useid";
 import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { BioProvider } from "./component/ContextAPI/index";
+import { Usereducercomp } from "./component/useReducer";
 function App() {
 
   return (
@@ -20,7 +21,8 @@ function App() {
           <Link to="/profile">Profile</Link> | &nbsp;
           <Link to="/apilogic">API Fetch</Link>| &nbsp;
           <Link to="/useref">Use Ref</Link> | &nbsp;
-          <Link to="/useid">Use Id</Link>
+          <Link to="/useid">Use Id</Link> | &nbsp;
+          <Link to="/reducer">Reducer</Link>
         </nav>
         {/* <BioProvider> */}
         <Routes>
@@ -37,6 +39,7 @@ function App() {
             </BioProvider>
           } />
 
+          <Route path="/reducer" element={<Usereducercomp />} />
         </Routes>
         {/* </BioProvider> */}
       </BrowserRouter>
