@@ -10,10 +10,10 @@ import { BrowserRouter, Routes, Route, Link } from "react-router-dom";
 import { BioProvider } from "./component/ContextAPI/index";
 import { Usereducercomp } from "./component/useReducer";
 import { Reactmemo } from "./component/Memo/Reactmemo";
+import { Parallax } from "./component/Parallax";
 function App() {
 
   return (
-    <div className="App">
       <BrowserRouter>
         <nav>
           <Link to="/">Home</Link> | &nbsp;
@@ -25,10 +25,11 @@ function App() {
           <Link to="/useid">Use Id</Link> | &nbsp;
           <Link to="/reducer">Reducer</Link>| &nbsp;
           <Link to="/memo">Memo</Link>
+          <Link to="/useid">Use Id</Link>| &nbsp;
+          <Link to="/parallax">Parallax</Link>
         </nav>
-        {/* <BioProvider> */}
+        <BioProvider>
         <Routes>
-
           <Route path="/" element={<Home />} />
           <Route path="/todo" element={<Todo />} />
           <Route path="/switch" element={<Toggleswitch />} />
@@ -36,17 +37,15 @@ function App() {
           <Route path="/apilogic" element={<Fetchapi />} />
           <Route path="/useref" element={<Refexample />} />
           <Route path="/useid" element={
-            <BioProvider>
               <Useidexample />
-            </BioProvider>
           } />
 
           <Route path="/reducer" element={<Usereducercomp />} />
           <Route path="/memo" element={<Reactmemo />} />
+          <Route path="/parallax" element={<Parallax />} />
         </Routes>
-        {/* </BioProvider> */}
+        </BioProvider>
       </BrowserRouter>
-    </div >
   );
 }
 

@@ -1,11 +1,11 @@
-import { useId, useContext } from "react";
-import { BioContext } from "./ContextAPI/index";
+import { useId } from "react";
+import { useBioContext } from "./ContextAPI/index";
 export const Useidexample = () => {
     const handleSignIn = (e) => {
         e.preventDefault();
     };
     var id = useId();
-    const { name, age } = useContext(BioContext);
+    const { name, age } = useBioContext();
     return (<>
         <h2>Login</h2>
         <form >

@@ -1,9 +1,11 @@
 import { useRef } from "react";
 import { Forwardref } from './forwardref';
+import { useBioContext } from "./ContextAPI/index";
 export default function Refexample() {
 
     const username = useRef(null);
     const password = useRef(null);
+    const { name, age } = useBioContext();
     const handleSignIn = (e) => {
         e.preventDefault();
         alert('UserName=' + username.current.value + '&Passwprd=' + password.current.value)
@@ -12,6 +14,7 @@ export default function Refexample() {
 
         <div >
             <h2>Login</h2>
+             {name} is {age} years old.
             <form style={{ display: 'flex', flexDirection: 'column' }}>
                 <label htmlFor="email">Email</label>
                 <input

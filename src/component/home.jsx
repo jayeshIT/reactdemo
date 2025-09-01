@@ -1,7 +1,6 @@
 import React from "react";
 import { Counterchild } from "./counterchild";
 import { Liftupcomponent } from "./Liftupcomponent";
-
 export const Home = () => {
   console.log("App Rendered");
   var [count, setCount] = React.useState(0);

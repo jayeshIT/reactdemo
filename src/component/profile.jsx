@@ -9,7 +9,7 @@ export default function Profile() {
 
   let data = [
     {
-      name: "Adeel Solangi",
+      name: "Adeel Solangi" ,
       language: "Sindhi",
       id: "V59OF92YF627HFY0",
       bio: "Donec lobortis eleifend condimentum. Cras dictum dolor lacinia lectus vehicula rutrum. Maecenas quis nisi nunc. Nam tristique feugiat est vitae mollis. Maecenas quis nisi nunc.",
