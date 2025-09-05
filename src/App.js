@@ -14,6 +14,7 @@ import { Parallax } from "./component/Parallax";
 import { Usememo } from "./component/Memo/Usememo";
 import { AppLayout } from "./component/Applayour";
 import { Report } from "./component/Report";
+import { Movies } from "./component/Movies";
 import { ContactUs, contactData } from "./component/ContactUs";
 
 const router = createBrowserRouter([
@@ -63,6 +64,10 @@ const router = createBrowserRouter([
     {
       path: "/Usememo",
       element: <Usememo />,
+    },
+    {
+      path: "/movies",
+      element: <Movies />,
     },
     {
       path: "/contact",

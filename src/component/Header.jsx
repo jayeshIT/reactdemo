@@ -21,7 +21,7 @@ export const Header = () => {
                             <NavLink to="/todo">Todo</NavLink>
                             <NavLink to="/switch">switch</NavLink>
                             <NavLink to="/profile">Profile</NavLink>
-                            <NavLink to="/apilogic">APIFetch</NavLink>
+                            <NavLink to="/apilogic">AXIOS</NavLink>
                             <NavLink to="/useref">UseRef</NavLink>
                             <NavLink to="/useid">UseId</NavLink>
                             <NavLink to="/reducer">Reducer</NavLink>

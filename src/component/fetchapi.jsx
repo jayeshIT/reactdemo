@@ -1,4 +1,5 @@
 import { React, useEffect, useState } from "react";
+import { NavLink } from "react-router-dom";
 import "./fetchapi.css";
 export const Fetchapi = () => {
   const [apidata, setApidata] = useState(null);
@@ -47,7 +48,9 @@ export const Fetchapi = () => {
   if (apidata) {
     return (
       <>
+
         <section className="container">
+          <NavLink to="/movies">Movies List</NavLink>
           <header>
             <h1>Let's catch pokemon</h1>
           </header>
