@@ -21,7 +21,7 @@
 }
 
 .todo-list {
-  border : 1px solid grey;
+  border: 1px solid grey;
   max-width: 500px;
   /* margin: 20px auto 80px auto; */
   background: #fff;
@@ -85,10 +85,11 @@ button {
   padding: 6px 12px;
   border: none;
   border-radius: 6px;
-  color: #fff;
+  color: blue;
   cursor: pointer;
   margin-left: 6px;
   font-size: 1rem;
+  background-color: white;
 }
 
 button[type="submit"],

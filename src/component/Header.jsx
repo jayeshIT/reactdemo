@@ -27,7 +27,7 @@ export const Header = () => {
                             <NavLink to="/useid">UseId</NavLink>
                             <NavLink to="/reducer">Reducer</NavLink>
                             <NavLink to="/memo">Memo</NavLink>
-                            <NavLink to="/parallax">Parallax</NavLink>
+                            {/* <NavLink to="/parallax">Parallax</NavLink> */}
                             <NavLink to="/Usememo">Usememo</NavLink>
                             {styles.nav}
                         </ul>
