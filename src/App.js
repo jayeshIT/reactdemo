@@ -16,7 +16,7 @@ import { AppLayout } from "./component/Applayour";
 import { Report } from "./component/Report";
 import { Movies } from "./component/Movies";
 import { ContactUs, contactData } from "./component/ContactUs";
-
+import { Posts } from "./component/CRUD/Posts";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -73,7 +73,11 @@ const router = createBrowserRouter([
       path: "/contact",
       element: <ContactUs />,
       action: contactData
-    }]
+    }, {
+      path: "/posts",
+      element: <Posts />,
+    }
+    ]
   }, {
     path: 'report',
     element: <Report />

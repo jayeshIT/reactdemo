@@ -8,17 +8,17 @@
 #root {
   width: 100%;
   height: 100vh;
-  background-color: #E7E9EB
+  background-color: #b1cce6
 }
 
 section {
-  height: 100vh;
   width: 100%;
   color: white;
   text-align: center;
   background-repeat: no-repeat;
   background-position: top center;
   background-attachment: fixed;
+  background-color: #b1cce6;
 }
 
 .section-1 {
@@ -67,10 +67,7 @@ section {
   }
 }
 
-button {
-  color: black;
-  background-color: #007bff;
-}
+
 
 .active {
   color: rgb(214, 150, 103) !important
@@ -125,4 +122,61 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background: #0056b3;
+}
+
+.footer {
+  width: 100%;
+  text-align: center;
+  background-color: rgb(162, 71, 228);
+  color: white;
+  padding: 20px;
+  margin: 0 auto;
+}
+
+.footer a {
+  color: #fff;
+}
+
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  /* Responsive columns */
+  gap: 16px;
+  /* Spacing between grid items */
+}
+
+.grid-item {
+  background-color: #f0f0f0;
+  padding: 20px;
+  border-left: 4px solid #ccc;
+  opacity: 0.9;
+  text-align: center;
+  height: 200px;
+  color: black;
+
+}
+
+
+.grid-title {
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.grid-desc {
+  text-align: left;
+  padding: 10px;
+  margin-top: 1rem;
+  font-size: 0.8rem;
+}
+
+.button1 {
+  color: black;
+  width: 4rem;
+  text-align: center;
+  padding: 5px;
+  background-color: #007bff;
+  color: white;
+  position: relative;
+  bottom: 10px;
 }

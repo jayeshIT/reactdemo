@@ -18,6 +18,7 @@ export const Header = () => {
                     <nav className={styles.jQaQN}>
                         <ul>
                             <NavLink className={({ isActive }) => isActive ? "active" : ""} to="/">Home</NavLink>
+                            <NavLink to="/posts">FullStack</NavLink>
                             <NavLink to="/todo">Todo</NavLink>
                             <NavLink to="/switch">switch</NavLink>
                             <NavLink to="/profile">Profile</NavLink>
