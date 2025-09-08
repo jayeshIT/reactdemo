@@ -1,22 +1,16 @@
-import { useEffect, useMemo, useState } from "react"
+import { useMemo, useState } from "react"
 import Count from './Memocount';
 export const Reactmemo = () => {
     const [count, setCount] = useState(0);
-    // let data = {
-    //     name: "jkp",
-    //     age: 30
-    // }
+
     let data = useMemo(() => {
         return {
             name: "jkp",
             age: 30
         }
     }, [])
-    const [name, setName] = useState()
 
-    let handleNameChange = () => {
-        setName("JJ");
-    }
+
     return (<>
 
         <div style={{ display: "flex", flexDirection: "row", padding: 10 }}>

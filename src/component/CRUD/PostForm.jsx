@@ -27,11 +27,9 @@ export const PostForm = ({ data, setData, updateDataApi, setUpdateDataApi }) => 
     const handleFormSubmit = async (e) => {
         e.preventDefault();
         var action = e.nativeEvent.submitter.value;
-        if (action == "Edit") {
+        if (action === "Edit") {
             const res = await upateData(updateDataApi.id, addData);
-            if (res.status == 200) {
-                console.log("RES : " + res.status);
-                console.log("RES ID : " + res.id);
+            if (res.status === 200) {
                 setData((prev) => {
                     return prev.map((currentEle) => {
                         return currentEle.id === res.data.id ? res.data : currentEle
@@ -47,7 +45,7 @@ export const PostForm = ({ data, setData, updateDataApi, setUpdateDataApi }) => 
         } else {
             const res = await postData(addData);
             console.log("RES : " + res.status)
-            if (res.status == 201) {
+            if (res.status === 201) {
                 setData([...data, res.data]);
                 setAddData({
                     title: "",

@@ -24,7 +24,7 @@ export const Posts = () => {
     const handleDeletePost = async (id) => {
         try {
             var res = await deletePost(id);
-            if (res.status == 200) {
+            if (res.status === 200) {
                 const newUpdatedPosts = data.filter((e) => e.id !== id);
                 setData(newUpdatedPosts);
             }

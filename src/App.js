@@ -12,7 +12,7 @@ import { Usereducercomp } from "./component/useReducer";
 import { Reactmemo } from "./component/Memo/Reactmemo";
 import { Parallax } from "./component/Parallax";
 import { Usememo } from "./component/Memo/Usememo";
-import { AppLayout } from "./component/Applayour";
+import { AppLayout } from "./component/Applayout";
 import { Report } from "./component/Report";
 import { Movies } from "./component/Movies";
 import { ContactUs, contactData } from "./component/ContactUs";
