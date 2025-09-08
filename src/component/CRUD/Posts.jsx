@@ -3,7 +3,9 @@ import { deletePost, getPost } from "../services/PostApi";
 import "../fetchapi.css";
 import { PostForm } from "./PostForm";
 export const Posts = () => {
+
     const [data, setData] = useState([]);
+    const [updateDataApi, setUpdateDataApi] = useState({});
     const getPostData = async () => {
         try {
             var res = await getPost();
@@ -12,9 +14,12 @@ export const Posts = () => {
             console.log(error);
         }
     }
+
     useEffect(() => {
         getPostData();
+
     }, [])
+
 
     const handleDeletePost = async (id) => {
         try {
@@ -24,13 +29,19 @@ export const Posts = () => {
                 setData(newUpdatedPosts);
             }
         } catch (error) {
+            console.log(error);
         }
     }
+
+    const handleUpdatePost = (ele) => {
+        setUpdateDataApi(ele);
+    }
+
     return (<>
         <section>
             <div className="container">
                 <h1>Posts</h1>
-                <PostForm data={data} setData={setData}></PostForm>
+                <PostForm data={data} setData={setData} updateDataApi={updateDataApi} setUpdateDataApi={setUpdateDataApi}></PostForm>
                 <div className="grid-container">
                     {
                         data.map((curentEle) => {
@@ -43,7 +54,7 @@ export const Posts = () => {
                                         {curentEle.body}
                                     </div>
                                     <div style={{ display: "flex", flexDirection: "row", alignItems: "left", marginTop: 10 }}>
-                                        <button className="button1">Edit</button> &nbsp;
+                                        <button className="button1" onClick={() => handleUpdatePost(curentEle)}>Edit</button> &nbsp;
                                         <button className="button1" onClick={() => handleDeletePost(curentEle.id)}>Delete</button>
                                     </div>
                                 </div>

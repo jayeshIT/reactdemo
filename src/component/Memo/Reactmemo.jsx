@@ -26,7 +26,7 @@ export const Reactmemo = () => {
         <div style={{ padding: 10 }}>
             <p>
                 If you are passing object and it is not changing.
-                Thrn use "useMemo".
+                Then use "useMemo".
             </p>
             <p>
                 If you are passing sinle string then dont use "useMemo" but use "Memo" at Child level
