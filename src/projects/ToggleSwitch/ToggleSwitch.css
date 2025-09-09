@@ -39,10 +39,3 @@
     -moz-transform: translateX(0px);
     -o-transform: translateX(0px);
 }
-
-body {
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}

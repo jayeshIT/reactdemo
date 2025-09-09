@@ -7,8 +7,10 @@
 
 #root {
   width: 100%;
+  min-height: 100vh;
   background-image: linear-gradient(to left, #b1cce6, #ffff);
 }
+
 
 section {
   width: 100%;
@@ -183,4 +185,14 @@ button[type="submit"]:hover {
   position: relative;
   padding: 6px;
   height: 2.125rem;
+}
+
+.main-div {
+  padding: 50px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10px;
+  box-shadow: rgba(17, 17, 26, 0.05) 0px 1px 0px,
+    rgba(17, 17, 26, 0.1) 0px 0px 8px;
+  margin-bottom: 30px;
+  margin: 0 auto 30px;
 }

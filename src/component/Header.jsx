@@ -20,7 +20,6 @@ export const Header = () => {
                             <NavLink className={({ isActive }) => isActive ? "active" : ""} to="/">Home</NavLink>
                             <NavLink to="/posts">FullStack</NavLink>
                             <NavLink to="/todo">Todo</NavLink>
-                            <NavLink to="/switch">switch</NavLink>
                             <NavLink to="/profile">Profile</NavLink>
                             <NavLink to="/apilogic">AXIOS</NavLink>
                             <NavLink to="/useref">UseRef</NavLink>
@@ -29,7 +28,7 @@ export const Header = () => {
                             <NavLink to="/memo">Memo</NavLink>
                             {/* <NavLink to="/parallax">Parallax</NavLink> */}
                             <NavLink to="/Usememo">Usememo</NavLink>
-                            {styles.nav}
+                            <NavLink to="/ui/list">UI</NavLink>
                         </ul>
                     </nav>
                 </div>

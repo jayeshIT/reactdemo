@@ -1,5 +1,4 @@
 import "./App.css";
-import Toggleswitch from "./projects/ToggleSwitch/ToggleSwitch";
 import { Todo } from "./projects/Todo/Todo";
 import { Home } from "./component/home";
 import Profile from "./component/profile";
@@ -17,6 +16,7 @@ import { Report } from "./component/Report";
 import { Movies } from "./component/Movies";
 import { ContactUs, contactData } from "./component/ContactUs";
 import { Posts } from "./component/CRUD/Posts";
+import { Parent } from "./component/UI/Parent";
 const router = createBrowserRouter([
   {
     path: "/",
@@ -28,10 +28,6 @@ const router = createBrowserRouter([
     {
       path: "/todo",
       element: <Todo />,
-    },
-    {
-      path: "/switch",
-      element: <Toggleswitch />,
     },
     {
       path: "/profile",
@@ -76,6 +72,9 @@ const router = createBrowserRouter([
     }, {
       path: "/posts",
       element: <Posts />,
+    }, {
+      path: "/ui/list",
+      element: <Parent />,
     }
     ]
   }, {
