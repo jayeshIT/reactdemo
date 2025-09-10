@@ -23,7 +23,7 @@ export const Home = () => {
     setCount(0);
   };
   return (
-    <>
+    <div className="main-div">
       <p>Increment button will disabled if value grater then 100 </p>
       <p>Decrement button will disabled if value less than 100 </p>
       <h1>{count}</h1>
@@ -44,6 +44,6 @@ export const Home = () => {
       <Counterchild count={count} />
       <Liftupcomponent></Liftupcomponent>
 
-    </>
+    </div>
   );
 };

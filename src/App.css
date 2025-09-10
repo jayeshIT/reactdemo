@@ -195,4 +195,5 @@ button[type="submit"]:hover {
     rgba(17, 17, 26, 0.1) 0px 0px 8px;
   margin-bottom: 30px;
   margin: 0 auto 30px;
+  width: 100%;
 }

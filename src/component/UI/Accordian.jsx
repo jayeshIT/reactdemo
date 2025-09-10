@@ -5,33 +5,37 @@ import { FAQ } from "./Faq";
 export const Accordian = () => {
     //const [data, setData] = useState(questions);
     const [data, setData] = useState([]);
+
     const [activeId, setActiveId] = useState(false);
     useEffect(() => {
         setData(FAQ);
-    })
+    },)
+
+
     const handleClickButton = () => {
         setActiveId(!activeId);
     }
     return (
-        <>
-            <div>
-                <h1>The Accordain </h1>
+        <div className="main-div">
+            <h1>The Accordain </h1>
+            <section>
                 <ul className='section-accordian'>
                     {
                         data.map((curElem) => {
                             return <li key={curElem.id}>
                                 <div className='accordian-grid'>
                                     <p>{curElem.question}</p>
-
-                                    <button onClick={handleClickButton}>{activeId ? "Hide" : "Show"}</button>
-
+                                    <button onClick={() => handleClickButton(curElem.id)}>{activeId == curElem.id ? "Hide" : "Show"}</button>
                                 </div>
-                                <p className='answers'>{activeId && curElem.answer}</p>
+                                {
+                                    (activeId == curElem.id && <div className='answers'>{curElem.answer}</div>)
+                                }
+
                             </li>
                         })
                     }
                 </ul>
-            </div>
-        </>
+            </section>
+        </div>
     )
 }
