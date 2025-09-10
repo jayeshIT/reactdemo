@@ -7,25 +7,20 @@ export const Useidexample = () => {
     var id = useId();
     const { name, age } = useBioContext();
     return (<>
-        <h2>Login</h2>
-        <form >
+        <h1>Login</h1>
+        <form style={{ display: "flex", flexDirection: "column", gap: 10 }}>
             {name} is {age} years old.
             <div>
-                <label htmlFor={id + "usernameId"}>username</label>
+                <label htmlFor={id + "usernameId"}>Username : </label>
                 <input type="text" id={id + "usernameId"} name="username" />
             </div>
 
             <div>
-                <label htmlFor={id + "passwordId"}>password</label>
+                <label htmlFor={id + "passwordId"}>Password : </label>
                 <input type="text" id={id + "passwordId"} name="password" />
             </div>
 
-            <div>
-                <label htmlFor={id + "emailId"}>email</label>
-                <input type="text" id={id + "emailId"} name="email" />
-            </div>
-
-            <button type="submit" onClick={handleSignIn}>Sign In</button>
+            <button type="submit" onClick={handleSignIn} style={{ width: 180 }}>Sign In</button>
 
         </form>
     </>)

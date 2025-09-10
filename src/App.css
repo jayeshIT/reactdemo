@@ -11,6 +11,9 @@
   background-image: linear-gradient(to left, #b1cce6, #ffff);
 }
 
+h2 {
+  color: white;
+}
 
 section {
   width: 100%;
@@ -196,4 +199,5 @@ button[type="submit"]:hover {
   margin-bottom: 30px;
   margin: 0 auto 30px;
   width: 100%;
+  height: 100vh;
 }

@@ -4,15 +4,14 @@ import bird_header from "../assets/images/bird_header.png"
 export const Header = () => {
 
     return (<>
-        <header className={styles.lcZLeN}>
-            <div className={styles.krpsTW} >
+        <header className={styles.mainheader}>
+            <div className={styles.precontainer} >
                 <div className={styles.container}>
-                    <a className={styles.eEfckR}>
+                    <a className={styles.anchorclass}>
                         <img src={bird_header} alt="Logo"></img>
-
                         <div className={styles.sitename}>
-                            <span>Technical</span>
-                            <span>Bird</span>
+                            <span>The Real</span>
+                            <span>Code Bird</span>
                         </div>
                     </a>
                     <nav className={styles.jQaQN}>
@@ -29,6 +28,7 @@ export const Header = () => {
                             {/* <NavLink to="/parallax">Parallax</NavLink> */}
                             <NavLink to="/Usememo">Usememo</NavLink>
                             <NavLink to="/ui/list">UI</NavLink>
+                            <NavLink to="/props">Props</NavLink>
                         </ul>
                     </nav>
                 </div>

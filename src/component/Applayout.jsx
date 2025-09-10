@@ -8,10 +8,10 @@ export const AppLayout = () => {
     if (navigation.state === "loading")
         return (<h1>Loading....</h1>)
     return (
-        <>
+        <div >
             <Header></Header>
             <Outlet></Outlet>
             <Footer></Footer>
-        </>
+        </div>
     );
 }

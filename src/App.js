@@ -16,6 +16,7 @@ import { Report } from "./component/Report";
 import { Movies } from "./component/Movies";
 import { ContactUs, contactData } from "./component/ContactUs";
 import { Posts } from "./component/CRUD/Posts";
+import { ParentComponent } from "./component/PropsExample/ParentComponent";
 import { Parent } from "./component/UI/Parent";
 const router = createBrowserRouter([
   {
@@ -75,6 +76,10 @@ const router = createBrowserRouter([
     }, {
       path: "/ui/list",
       element: <Parent />,
+    },
+    {
+      path: "props",
+      element: <ParentComponent />,
     }
     ]
   }, {

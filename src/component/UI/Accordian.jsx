@@ -5,15 +5,19 @@ import { FAQ } from "./Faq";
 export const Accordian = () => {
     //const [data, setData] = useState(questions);
     const [data, setData] = useState([]);
-
     const [activeId, setActiveId] = useState(false);
     useEffect(() => {
         setData(FAQ);
     },)
 
 
-    const handleClickButton = () => {
-        setActiveId(!activeId);
+    const handleClickButton = (id) => {
+        if (id == activeId) {
+            setActiveId(false)
+        } else {
+            setActiveId(id);
+        }
+
     }
     return (
         <div className="main-div">
@@ -27,10 +31,8 @@ export const Accordian = () => {
                                     <p>{curElem.question}</p>
                                     <button onClick={() => handleClickButton(curElem.id)}>{activeId == curElem.id ? "Hide" : "Show"}</button>
                                 </div>
-                                {
-                                    (activeId == curElem.id && <div className='answers'>{curElem.answer}</div>)
-                                }
-
+                                {(activeId == curElem.id && <div className='answers'>{curElem.answer}</div>
+                                )}
                             </li>
                         })
                     }

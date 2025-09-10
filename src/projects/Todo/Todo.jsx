@@ -84,10 +84,8 @@ export const Todo = () => {
 
       <section className="section-4">
 
-        <header>
-          <h1 className="header">Todo List</h1>
-          <h2>{dateTime}</h2>
-        </header>
+        <h2>Todo List</h2>
+        <h2>{dateTime}</h2>
 
         <div>
           <form onSubmit={handleFormSubmit}>
@@ -101,15 +99,8 @@ export const Todo = () => {
           </form>
         </div>
         <div >
-          <button
-            onClick={handleFormSubmit}
-            type="submit"
-          >
-            Add Task
-          </button>
-          <button onClick={handleDeleteAll}>
-            Clear All
-          </button>
+          <button onClick={handleFormSubmit} type="submit" style={{ display: 'inline-block', padding: 10 }} > Add Task</button>
+          <button onClick={handleDeleteAll} type="cancel" style={{ display: 'inline-block', padding: 10 }}>Clear All </button>
         </div>
         <ul
           style={{

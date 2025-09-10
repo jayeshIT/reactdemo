@@ -1,11 +1,11 @@
-.lcZLeN {
+.mainheader {
     position: sticky;
     top: 0px;
     z-index: 10;
     background-color: #333;
 }
 
-.krpsTW {
+.precontainer {
     margin-top: 1rem;
     margin-bottom: 1.5rem;
     /* background: rgb(43, 43, 43); */
@@ -24,7 +24,7 @@
     align-items: center;
 }
 
-.eEfckR {
+.anchorclass {
     display: flex;
     gap: 1rem;
     -webkit-box-align: center;
@@ -33,7 +33,7 @@
 
 }
 
-.eEfckR img {
+.anchorclass img {
     height: 60px;
     width: 60px;
 }
