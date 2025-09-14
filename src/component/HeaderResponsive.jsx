@@ -1,20 +1,24 @@
-import styles from "./Header.module.css";
+import { useState } from "react";
+import { GiHamburgerMenu } from "react-icons/gi";
 import { NavLink } from "react-router-dom";
-import bird_header from "../assets/images/bird_header.png";
-export const Header = () => {
-
+import bird_header from "../assets/images/bird_header.png"
+export const HeaderResponsive = () => {
+    const [showMenu, setShowMenu] = useState(false);
+    const handleButtonToggle = () => {
+        setShowMenu(!showMenu);
+    }
     return (<>
-        <header className={styles.mainheader}>
-            <div className={styles.precontainer} >
-                <div className={styles.container}>
-                    <a className={styles.anchorclass}>
+        <header>
+            <div className="container2">
+                <div className="grid navbar-grid">
+                    <a className='anchorclass'>
                         <img src={bird_header} alt="Logo"></img>
-                        <div className={styles.sitename}>
+                        <div className="sitename">
                             <span>The Real</span>
                             <span>Code Bird</span>
                         </div>
                     </a>
-                    <nav className={styles.rightoptions}>
+                    <nav className={showMenu ? "menu-mobile" : "menu-web"}>
                         <ul>
                             <NavLink className={({ isActive }) => isActive ? "active" : ""} to="/">Home</NavLink>
                             <NavLink to="/posts">FullStack</NavLink>
@@ -31,6 +35,11 @@ export const Header = () => {
                             <NavLink to="/props">Props</NavLink>
                         </ul>
                     </nav>
+                    <div className="ham-menu">
+                        <button onClick={handleButtonToggle}>
+                            <GiHamburgerMenu />
+                        </button>
+                    </div>
                 </div>
             </div>
         </header>

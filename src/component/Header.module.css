@@ -30,7 +30,6 @@
     -webkit-box-align: center;
     align-items: center;
     z-index: 10;
-
 }
 
 .anchorclass img {
@@ -48,12 +47,12 @@
 
 
 
-.jQaQN {
+.rightoptions {
     display: flex;
     gap: 0.375rem;
 }
 
-.jQaQN a {
+.rightoptions a {
     padding: 0.5rem;
     color: white;
     transition: 0.2s;
@@ -85,9 +84,9 @@ nav ul li a {
     color: #333;
     text-align: center;
     padding: 14px 16px;
-    text-decoration: none;
+    text-rightoptions: none;
 }
 
-.jQaQN a:hover {
+.rightoptions a:hover {
     color: rgb(214, 150, 103)
 }

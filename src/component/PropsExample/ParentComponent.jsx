@@ -2,13 +2,31 @@ import { useState } from "react";
 import { ChildComponent } from "./ChildComponent";
 
 export const ParentComponent = () => {
-    const [name, setName] = useState("Sachin");
+    const [person, setPerson] = useState({
+        name: "Sachin",
+        age: "30"
+    });
+    console.log("usest :" + useState);
     const changeName = () => {
-        setName("Cricketers name");
+        setPerson((prev) => {
+            console.log(prev);
+            return {
+                name: "John",
+                age: "40"
+            }
+        });
+    }
+    const changeage = (value) => {
+        setPerson((prev) => {
+            console.log(prev);
+            return { ...prev, age: '45' }
+        });
     }
     return (<>
-        I am ParentComponent
+        I am ParentComponent {person.name} and {person.age}
         <br />
-        <ChildComponent fname={name} changename={changeName}></ChildComponent>
+        <button onClick={(e) => changeage('jayesh')}>Change Age </button>
+        <br />
+        <ChildComponent fname={person.name} changename={changeName}></ChildComponent>
     </>)
 }

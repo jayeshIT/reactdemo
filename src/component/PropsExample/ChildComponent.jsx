@@ -1,7 +1,7 @@
 export const ChildComponent = ({ fname, changename }) => {
-    return (<>
+    return (<div style={{ padding: 10 }}>
         I am child <br />
         {fname}
-        <button onClick={changename}>Change Name</button>
-    </>)
+        <button onClick={changename}>Change Person</button>
+    </div>)
 }

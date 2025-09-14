@@ -1,6 +1,7 @@
 import { Header } from "./Header";
 import { Footer } from "./Footer";
 import { Outlet, useNavigation } from "react-router-dom";
+import { HeaderResponsive } from "./HeaderResponsive";
 import React from "react";
 export const AppLayout = () => {
     const navigation = useNavigation();
@@ -9,7 +10,7 @@ export const AppLayout = () => {
         return (<h1>Loading....</h1>)
     return (
         <div >
-            <Header></Header>
+            <HeaderResponsive></HeaderResponsive>
             <Outlet></Outlet>
             <Footer></Footer>
         </div>
