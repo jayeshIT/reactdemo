@@ -1,0 +1,42 @@
+.footersection {
+    height: 6rem;
+    width: 100%;
+    background-color: grey;
+    box-shadow: rgb(4, 4, 4) 0px 10px 10px -10px;
+    margin-bottom: 0.8rem;
+}
+
+.footerContainer {
+    max-width: 75rem;
+    margin: auto;
+    height: 6rem;
+}
+
+.footergrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    height: 6rem;
+    background-color: lightgray;
+    gap: 0.8rem;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0px 0px 0px 05.rem;
+}
+
+.footercontact {
+    display: flex;
+    flex-direction: row;
+    gap: 0.5rem;
+    border: 1px solid red;
+    padding-left: 1rem;
+}
+
+.footericon {
+    justify-content: center;
+    align-items: center;
+    display: flex;
+}
+
+.footercontscttext {
+    padding: 1rem;
+}
