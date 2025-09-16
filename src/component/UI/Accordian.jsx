@@ -12,7 +12,7 @@ export const Accordian = () => {
 
 
     const handleClickButton = (id) => {
-        if (id == activeId) {
+        if (id === activeId) {
             setActiveId(false)
         } else {
             setActiveId(id);
@@ -29,9 +29,9 @@ export const Accordian = () => {
                             return <li key={curElem.id}>
                                 <div className='accordian-grid'>
                                     <p>{curElem.question}</p>
-                                    <button onClick={() => handleClickButton(curElem.id)}>{activeId == curElem.id ? "Hide" : "Show"}</button>
+                                    <button onClick={() => handleClickButton(curElem.id)}>{activeId === curElem.id ? "Hide" : "Show"}</button>
                                 </div>
-                                {(activeId == curElem.id && <div className='answers'>{curElem.answer}</div>
+                                {(activeId === curElem.id && <div className='answers'>{curElem.answer}</div>
                                 )}
                             </li>
                         })
